@@ -23,7 +23,7 @@ userRouter.post('/register', async (req, res) => {
         });
     };
 
-    const newUser = await prisma.user.create({
+    const createdUser = await prisma.user.create({
         data: {
             name,
             email,
@@ -33,7 +33,7 @@ userRouter.post('/register', async (req, res) => {
 
     res.status(201).json({
         message: 'Register successfully!',
-        data: newUser
+        data: createdUser
     });
 });
 
